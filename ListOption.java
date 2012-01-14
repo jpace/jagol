@@ -51,7 +51,6 @@ public class ListOption extends NonBooleanOption<List<String>> {
      * @see ListOption#convert(String)
      */
     protected void parse(String str) throws InvalidTypeException {
-        List<String> val = new ArrayList<String>();
         List<String> list = StringExt.toList(str);
         for (String s : list) {
             if (!s.equals("+=")) {
