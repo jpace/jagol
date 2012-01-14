@@ -1,45 +1,31 @@
 package org.incava.jagol;
 
-import java.io.*;
-import java.util.*;
-
-
 /**
- * Represents an option that is an float.
+ * Represents an option that is a float.
  */
-public class FloatOption extends NonBooleanOption
-{
+public class FloatOption extends NonBooleanOption<Float> {    
     private Float value;
     
     public FloatOption(String longName, String description) {
-        this(longName, description, null);
+        this(longName, description, null, null);
     }
 
     public FloatOption(String longName, String description, Float value) {
-        super(longName, description);
-        this.value = value;
+        this(longName, description, null, value);
     }
 
-    /**
-     * Returns the value. This is null if not set.
-     */
-    public Float getValue() {
-        return value;
+    public FloatOption(String longName, String description, Character shortName) {
+        super(longName, description, shortName, null);
     }
 
-    /**
-     * Sets the value.
-     */
-    public void setValue(Float value) {
-        this.value = value;
+    public FloatOption(String longName, String description, Character shortName, Float value) {
+        super(longName, description, shortName, value);
     }
 
     /**
      * Sets the value from the string, for a float type.
      */
-    public void setValue(String value) throws InvalidTypeException
-    {
-        tr.Ace.log("value: '" + value + "'");
+    public void setValueFromString(String value) throws InvalidTypeException {
         try {
             setValue(new Float(value));
         }
@@ -48,12 +34,7 @@ public class FloatOption extends NonBooleanOption
         }
     }
 
-    public String toString() {
-        return value == null ? "" : value.toString();
-    }
-
     protected String getType() {
         return "float";
     }
-
 }
