@@ -98,8 +98,6 @@ public class OptionSet {
      * Processes a run control file.
      */
     protected void processRunControlFile(String rcFileName) {
-        tr.Ace.setVerbose(true);
-        
         Properties props = new Properties();
         rcFileName = FileExt.resolveFileName(rcFileName);
         try {
