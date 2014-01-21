@@ -44,7 +44,7 @@ public class OptionSet {
     /**
      * Adds an options to this set.
      */
-    public <T extends Option> T addOption(T opt) {
+    public <T extends Option<?>> T addOption(T opt) {
         options.add(opt);
         return opt;
     }
@@ -108,7 +108,7 @@ public class OptionSet {
         }
 
         for (Map.Entry<Object, Object> propEntry : props.entrySet()) {
-            Option opt = findOptionByLongName((String)propEntry.getKey());
+            Option<?> opt = findOptionByLongName((String)propEntry.getKey());
             if (isTrue(opt)) {
                 setOption(opt, (String)propEntry.getValue());
             }
@@ -124,8 +124,8 @@ public class OptionSet {
         }
     }
 
-    protected Option findOptionByLongName(String longName) {
-        for (Option opt : options) {
+    protected Option<?> findOptionByLongName(String longName) {
+        for (Option<?> opt : options) {
             if (opt.getLongName().equals(longName)) {
                 return opt;
             }
@@ -194,7 +194,7 @@ public class OptionSet {
 
         List<String> tags = new ArrayList<String>();
 
-        for (Option opt : options) {
+        for (Option<?> opt : options) {
             StringBuffer buf = new StringBuffer("  ");
 
             if (opt.getShortName() == null) {
@@ -215,7 +215,7 @@ public class OptionSet {
         }
 
         for (int idx = 0; idx < options.size(); ++idx) {
-            Option opt = options.get(idx);
+            Option<?> opt = options.get(idx);
             String tag = tags.get(idx);
 
             System.out.print(tag);
@@ -237,7 +237,7 @@ public class OptionSet {
     }
 
     protected void showConfig() {
-        for (Option opt : options) {
+        for (Option<?> opt : options) {
             System.out.println("# " + opt.getDescription());
             System.out.println(opt.getLongName() + " = " + opt.toString());
             System.out.println();
