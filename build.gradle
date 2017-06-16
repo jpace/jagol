@@ -1,7 +1,7 @@
 apply plugin: 'java'
 
 group = 'org.incava.jagol'
-version ='1.0.0'
+version ='1.1.0'
 
 repositories {
     mavenCentral()
@@ -14,14 +14,10 @@ dependencies {
 }
 
 allprojects {
-    tasks.withType(Compile).all { Compile compile ->
+    tasks.withType(JavaCompile).all { JavaCompile compile ->
         compile.options.debug = true
         compile.options.compilerArgs = ['-Xlint:all']
     }
-}
-
-jar { 
-    from configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } 
 }
 
 test {
