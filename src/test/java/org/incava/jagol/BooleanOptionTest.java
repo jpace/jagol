@@ -1,9 +1,9 @@
 package org.incava.jagol;
 
-public class TestBooleanOption extends AbstractOptionTestCase {
+public class BooleanOptionTest extends AbstractOptionTestCase {
     private BooleanOption opt = new BooleanOption("boolopt", "this is the description of boolopt");
 
-    public TestBooleanOption(String name) {
+    public BooleanOptionTest(String name) {
         super(name);
     }
 

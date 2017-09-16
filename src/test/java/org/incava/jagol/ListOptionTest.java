@@ -5,10 +5,10 @@ import java.util.List;
 import org.incava.ijdk.util.IUtil;
 import static org.incava.ijdk.util.IUtil.*;
 
-public class TestListOption extends AbstractOptionTestCase {    
+public class ListOptionTest extends AbstractOptionTestCase {    
     ListOption opt = new ListOption("listopt", "this is the description of listopt");
 
-    public TestListOption(String name) {
+    public ListOptionTest(String name) {
         super(name);
     }
 

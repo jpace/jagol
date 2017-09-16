@@ -2,7 +2,7 @@ package org.incava.jagol;
 
 import static org.incava.ijdk.util.IUtil.*;
 
-public class TestNonBooleanOption extends AbstractOptionTestCase {    
+public class NonBooleanOptionTest extends AbstractOptionTestCase {    
     NonBooleanOption<Object> opt = new NonBooleanOption<Object>("nbopt", "this is the description of nbopt") {
             public void setValueFromString(String value) throws InvalidTypeException {        
             }
@@ -12,7 +12,7 @@ public class TestNonBooleanOption extends AbstractOptionTestCase {
             }
         };
     
-    public TestNonBooleanOption(String name) {
+    public NonBooleanOptionTest(String name) {
         super(name);
     }
 

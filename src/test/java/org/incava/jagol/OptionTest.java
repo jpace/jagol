@@ -2,8 +2,8 @@ package org.incava.jagol;
 
 import java.util.List;
 
-public class TestOption extends AbstractOptionTestCase {    
-    public TestOption(String name) {
+public class OptionTest extends AbstractOptionTestCase {    
+    public OptionTest(String name) {
         super(name);
     }
 

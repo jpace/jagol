@@ -2,10 +2,10 @@ package org.incava.jagol;
 
 import static org.incava.ijdk.util.IUtil.*;
 
-public class TestIntegerOption extends AbstractOptionTestCase {
+public class IntegerOptionTest extends AbstractOptionTestCase {
     IntegerOption opt = new IntegerOption("intopt", "this is the description of intopt");
 
-    public TestIntegerOption(String name) {
+    public IntegerOptionTest(String name) {
         super(name);
     }
 

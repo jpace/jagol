@@ -2,10 +2,10 @@ package org.incava.jagol;
 
 import static org.incava.ijdk.util.IUtil.*;
 
-public class TestStringOption extends AbstractOptionTestCase {
+public class StringOptionTest extends AbstractOptionTestCase {
     StringOption opt = new StringOption("stropt", "this is the description of stropt");
 
-    public TestStringOption(String name) {
+    public StringOptionTest(String name) {
         super(name);
     }
 

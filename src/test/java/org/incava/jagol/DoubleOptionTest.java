@@ -2,10 +2,10 @@ package org.incava.jagol;
 
 import static org.incava.ijdk.util.IUtil.*;
 
-public class TestDoubleOption extends AbstractOptionTestCase {
+public class DoubleOptionTest extends AbstractOptionTestCase {
     DoubleOption opt = new DoubleOption("dblopt", "this is the description of dblopt");
 
-    public TestDoubleOption(String name) {
+    public DoubleOptionTest(String name) {
         super(name);
     }
 

@@ -6,7 +6,7 @@ import junit.framework.TestCase;
 import org.incava.ijdk.io.IO;
 import static org.incava.ijdk.util.IUtil.*;
 
-public class TestOptionSet extends TestCase {
+public class OptionSetTest extends TestCase {
     OptionSet     optSet     = new OptionSet("app",            "this application does wonderful things");
     IntegerOption intOpt     = new IntegerOption("intopt",     "this option takes an integer argument");
     StringOption  stringOpt  = new StringOption("stringopt",   "this option takes a string argument");
@@ -14,7 +14,7 @@ public class TestOptionSet extends TestCase {
     DoubleOption  doubleOpt  = new DoubleOption("doubleopt",   "this option takes a double argument");
     BooleanOption booleanOpt = new BooleanOption("booleanopt", "this option takes a boolean argument");
 
-    public TestOptionSet(String name) {
+    public OptionSetTest(String name) {
         super(name);
         tr.Ace.log("name", name);
     }
@@ -75,23 +75,23 @@ public class TestOptionSet extends TestCase {
 
     public void testUsage() {
         List<String> args = list("--help");
-        optSet.addRunControlFile("/etc/TestOptionSet.conf");
-        optSet.addRunControlFile("~/.TestOptionSet");
+        optSet.addRunControlFile("/etc/OptionSetTest.conf");
+        optSet.addRunControlFile("~/.OptionSetTest");
         
         optSet.process(args);
     }
 
     public void testConfig() {
         List<String> args = list("--help - config");
-        optSet.addRunControlFile("/etc/TestOptionSet.conf");
-        optSet.addRunControlFile("~/.TestOptionSet");
+        optSet.addRunControlFile("/etc/OptionSetTest.conf");
+        optSet.addRunControlFile("~/.OptionSetTest");
         
         optSet.process(args);
     }
 
     public void testRunControlFile() {
         String userHome = System.getProperty("user.home");
-        String rcFileName = userHome + "/.TestOptionSet";
+        String rcFileName = userHome + "/.OptionSetTest";
         File   rcFile = new File(rcFileName);
 
         List<String> lines = list("intopt:     999", 
@@ -102,7 +102,7 @@ public class TestOptionSet extends TestCase {
             
         IO.printLines(rcFileName, lines);
             
-        optSet.addRunControlFile("~/.TestOptionSet");
+        optSet.addRunControlFile("~/.OptionSetTest");
             
         List<String> args = list("app");
         
@@ -119,7 +119,7 @@ public class TestOptionSet extends TestCase {
 
     public void testRunControlFileAndCommandLine() {
         String userHome = System.getProperty("user.home");
-        String rcFileName = userHome + "/.TestOptionSet";
+        String rcFileName = userHome + "/.OptionSetTest";
         File   rcFile = new File(rcFileName);
             
         List<String> lines = list("intopt:     999",
@@ -130,7 +130,7 @@ public class TestOptionSet extends TestCase {
             
         IO.printLines(rcFileName, lines);
             
-        optSet.addRunControlFile("~/.TestOptionSet");
+        optSet.addRunControlFile("~/.OptionSetTest");
             
         List<String> args = list("--doubleopt=4.38", "--booleanopt");
         

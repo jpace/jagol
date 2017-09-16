@@ -2,10 +2,10 @@ package org.incava.jagol;
 
 import static org.incava.ijdk.util.IUtil.*;
 
-public class TestFloatOption extends AbstractOptionTestCase {
+public class FloatOptionTest extends AbstractOptionTestCase {
     FloatOption opt = new FloatOption("fltopt", "this is the description of fltopt");
 
-    public TestFloatOption(String name) {
+    public FloatOptionTest(String name) {
         super(name);
     }
 
